@@ -57,10 +57,9 @@ This implementation supports 128 and 256 bit keys. The implementation is iterati
 
 The encipher and decipher block processing datapaths are separated and basically self contained given access to a set of round keys and a block. This makes it possible to hard wire the core to only encipher or decipher operation. This allows the synthesis/build tools to optimize away the other functionality which will reduce the size to about 50%. This has been tested to verify that decryption is removed and the core still works.
 
+## Algorithm :
 
-
-
-
+![aesfull](https://github.com/pratheekgg/SSCS_Synthoshpere/assets/121636887/eb92a760-667c-4923-a462-242fb1261320)
 
 
 
