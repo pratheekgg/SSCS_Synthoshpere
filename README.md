@@ -123,6 +123,13 @@ Compiling with iverilog once again but this time with yosys generated netlist fi
 #### Result of gtkwave simulation post-synthesis :
 
 
+![final](https://github.com/pratheekgg/SSCS_Synthoshpere/assets/121636887/70959dec-82b2-4eb7-85cb-c5349c24b38b)
 
 
+#### By comparing pre and post synthesis simulation results we can say the RTL design code is as per industry standards and eligible for tape - out.
 
+
+#### Big thanx to Visruat for the help !
+
+
+#### Thank you  (Ｔ▽Ｔ)
