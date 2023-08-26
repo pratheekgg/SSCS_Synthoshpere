@@ -20,14 +20,13 @@ Each byte of the block is replaced with a corresponding byte from the S-box, a p
 The rows of the block are shifted to the left by different offsets.
 #### MixColumns: 
 The columns of the block are mixed to provide diffusion.
-#### AddRoundKey: 
-The round key for the current round is combined with the data using XOR.
-### Final Round:
+AddRoundKey: The round key for the current round is combined with the data using XOR.
+#### Final Round:
 
-#### SubBytes
-#### ShiftRows
-#### AddRoundKey
-#### The number of main rounds depends on the key length and block size:
+##### SubBytes
+##### ShiftRows
+##### AddRoundKey
+##### The number of main rounds depends on the key length and block size:
 
 For a 256-bit key, there are 14 rounds.
 After all the rounds are completed, the encrypted data is obtained.
