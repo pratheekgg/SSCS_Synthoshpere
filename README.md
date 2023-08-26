@@ -9,18 +9,18 @@ A 256-bit key AES refers to the variant of AES where a 256-bit key is used for b
 ## Key Expansion: 
 The 256-bit key is expanded into a key schedule that contains a series of round keys. These round keys are used in the successive rounds of encryption.
 
-## Initial Round: 
+### Initial Round: 
 AddRoundKey: The first round key is combined with the input data using a bitwise XOR operation.
 
-## Main Rounds (Multiple Rounds):
+### Main Rounds (Multiple Rounds):
 
-### SubBytes: 
+#### SubBytes: 
 Each byte of the block is replaced with a corresponding byte from the S-box, a predefined substitution table.
-### ShiftRows: 
+#### ShiftRows: 
 The rows of the block are shifted to the left by different offsets.
-### MixColumns: 
+#### MixColumns: 
 The columns of the block are mixed to provide diffusion.
-### AddRoundKey: 
+#### AddRoundKey: 
 The round key for the current round is combined with the data using XOR.
 ### Final Round:
 
@@ -34,21 +34,22 @@ After all the rounds are completed, the encrypted data is obtained.
 
 #### Decryption is essentially the reverse process:
 
-## Key Expansion: The 256-bit key is expanded to generate round keys.
+### Key Expansion: 
+The 256-bit key is expanded to generate round keys.
 
-## Initial Round:
+### Initial Round:
 AddRoundKey: The last round key is combined with the encrypted data.
 
-## Main Rounds (Multiple Rounds):
+### Main Rounds (Multiple Rounds):
 
 Inverse operations of SubBytes, ShiftRows, and MixColumns are applied in reverse order.
 AddRoundKey: The round key for the current round is combined with the data.
 
-## Final Round:
+### Final Round:
 
-### Inverse SubBytes
-### Inverse ShiftRows
-### AddRoundKey
+#### Inverse SubBytes
+#### Inverse ShiftRows
+#### AddRoundKey
 At the end of this process, the original plaintext is obtained.
 
 The strength of AES lies in its key length. A 256-bit key provides a high level of security against brute-force attacks. The algorithm's design and its resistance to various cryptographic attacks make it a widely trusted choice for securing sensitive data.
@@ -64,11 +65,13 @@ The encipher and decipher block processing datapaths are separated and basically
 
 # DOCUMENTATION :
 
+## Pre Synthesis :
+
 Compilation of the RTL was made using opensource software iverilog for the design.v and test.v files in my testfiles folder.
 
 ![Screenshot from 2023-08-26 06-36-03](https://github.com/pratheekgg/SSCS_Synthoshpere/assets/121636887/8f43a6b4-b4fd-48fa-a277-d01bfaa93266)
 
-### Result of Compilation :
+#### Result of Compilation :
 
 ![Screenshot from 2023-08-26 06-34-10](https://github.com/pratheekgg/SSCS_Synthoshpere/assets/121636887/da7969aa-a583-450f-bdc8-b40928e7d2d4)
 
@@ -101,6 +104,8 @@ synth -top aes
 ![Screenshot from 2023-08-26 06-48-22](https://github.com/pratheekgg/SSCS_Synthoshpere/assets/121636887/48ca6386-2b51-46f1-885f-8007944bc246)
 
 
+## Post Synthesis :
+
 Command : 
 ```
 abc -liberty ../lib/sky130_fd_sc_hd_tt_025c_1v80.lib
@@ -108,9 +113,14 @@ abc -liberty ../lib/sky130_fd_sc_hd_tt_025c_1v80.lib
 
 ![Screenshot from 2023-08-26 06-55-17](https://github.com/pratheekgg/SSCS_Synthoshpere/assets/121636887/e4db9e5a-e0af-41e7-a2a8-0a197bd4a25b)
 
+The output of yosys (synthesis chart) has been added to the main branch.
+
+Compiling with iverilog once again but this time with yosys generated netlist file with the testbench for post synthesis check :
+
+![Screenshot from 2023-08-26 06-34-16](https://github.com/pratheekgg/SSCS_Synthoshpere/assets/121636887/3a6c859b-8462-4118-bf8d-32a1ffdfdf32)
 
 
-
+#### Result of gtkwave simulation post-synthesis :
 
 
 
