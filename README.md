@@ -64,13 +64,54 @@ The encipher and decipher block processing datapaths are separated and basically
 
 # DOCUMENTATION :
 
+Compilation of the RTL was made using opensource software iverilog for the design.v and test.v files in my testfiles folder.
+
+![Screenshot from 2023-08-26 06-36-03](https://github.com/pratheekgg/SSCS_Synthoshpere/assets/121636887/8f43a6b4-b4fd-48fa-a277-d01bfaa93266)
+
+### Result of Compilation :
+
+![Screenshot from 2023-08-26 06-34-10](https://github.com/pratheekgg/SSCS_Synthoshpere/assets/121636887/da7969aa-a583-450f-bdc8-b40928e7d2d4)
+
+Then another opensource software gtkwave was used to generate the waveform of the simulation from the generated dump.vcd file.
+
+### Simulation results :
+
+![Screenshot from 2023-08-26 06-09-23](https://github.com/pratheekgg/SSCS_Synthoshpere/assets/121636887/9daf277b-fbc8-4e57-a17b-456c32ec1768)
+
+The outputs are hexadecimal texts that were encrypted by the aes_encipher_block at the transmitter and decrypted by the aes_decipher_block at the reciever.
+
 The top module of this processor rtl design 'aes' consists of submodules aes_core, aes_enciphering_block, aes_deciphering_block, aes_inv_sbox, aes_sbox and memory unit.
 The command used to set 'aes' as top module :
+
 ```
 synth -top aes
 ```
-
 <img width="748" alt="1" src="https://github.com/pratheekgg/SSCS_Synthoshpere/assets/121636887/972d2691-92b0-40c1-87cf-337d85f4ef48">
+
+### Result of top module optimization : 
+
+![Screenshot from 2023-08-26 06-39-22](https://github.com/pratheekgg/SSCS_Synthoshpere/assets/121636887/9d349d99-c1dd-4a47-b3e5-bce370092c9d)
+
+![Screenshot from 2023-08-26 06-39-35](https://github.com/pratheekgg/SSCS_Synthoshpere/assets/121636887/76eebbdc-1db4-4770-aaee-a182e7ff853e)
+
+![Screenshot from 2023-08-26 06-39-42](https://github.com/pratheekgg/SSCS_Synthoshpere/assets/121636887/39b0a093-eb83-40b5-99b6-19a41ebd90bc)
+
+### Result of Flipflop re-mapping :
+
+![Screenshot from 2023-08-26 06-48-22](https://github.com/pratheekgg/SSCS_Synthoshpere/assets/121636887/48ca6386-2b51-46f1-885f-8007944bc246)
+
+
+Command : 
+```
+abc -liberty ../lib/sky130_fd_sc_hd_tt_025c_1v80.lib
+```
+
+![Screenshot from 2023-08-26 06-55-17](https://github.com/pratheekgg/SSCS_Synthoshpere/assets/121636887/e4db9e5a-e0af-41e7-a2a8-0a197bd4a25b)
+
+
+
+
+
 
 
 
