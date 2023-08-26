@@ -74,6 +74,7 @@ Compilation of the RTL was made using opensource software iverilog for the desig
 
 ![Screenshot from 2023-08-26 06-34-10](https://github.com/pratheekgg/SSCS_Synthoshpere/assets/121636887/da7969aa-a583-450f-bdc8-b40928e7d2d4)
 
+The unsuccessful decryption show that if channel is breached for sbox = inv_sbox, the information is discarded. 
 Then another opensource software gtkwave was used to generate the waveform of the simulation from the generated dump.vcd file.
 
 ### Simulation results :
