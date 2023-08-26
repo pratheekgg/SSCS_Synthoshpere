@@ -62,7 +62,15 @@ The encipher and decipher block processing datapaths are separated and basically
 ![aesfull](https://github.com/pratheekgg/SSCS_Synthoshpere/assets/121636887/eb92a760-667c-4923-a462-242fb1261320)
 
 
+# DOCUMENTATION :
 
+The top module of this processor rtl design 'aes' consists of submodules aes_core, aes_enciphering_block, aes_deciphering_block, aes_inv_sbox, aes_sbox and memory unit.
+The command used to set 'aes' as top module :
+```
+synth -top aes
+```
+
+<img width="748" alt="1" src="https://github.com/pratheekgg/SSCS_Synthoshpere/assets/121636887/972d2691-92b0-40c1-87cf-337d85f4ef48">
 
 
 
