@@ -113,10 +113,6 @@ synth -top aes
 
 ### Result of top module optimization : 
 
-```
-dfflibmap -liberty ../lib/sky130_fd_sc_hd_tt_025c_1v80.lib
-```
-
 ![Screenshot from 2023-08-26 06-39-22](https://github.com/pratheekgg/SSCS_Synthoshpere/assets/121636887/9d349d99-c1dd-4a47-b3e5-bce370092c9d)
 
 ![Screenshot from 2023-08-26 06-39-35](https://github.com/pratheekgg/SSCS_Synthoshpere/assets/121636887/76eebbdc-1db4-4770-aaee-a182e7ff853e)
@@ -124,6 +120,10 @@ dfflibmap -liberty ../lib/sky130_fd_sc_hd_tt_025c_1v80.lib
 ![Screenshot from 2023-08-26 06-39-42](https://github.com/pratheekgg/SSCS_Synthoshpere/assets/121636887/39b0a093-eb83-40b5-99b6-19a41ebd90bc)
 
 ### Result of Flipflop re-mapping :
+```
+dfflibmap -liberty ../lib/sky130_fd_sc_hd_tt_025c_1v80.lib
+```
+
 
 ![Screenshot from 2023-08-26 06-48-22](https://github.com/pratheekgg/SSCS_Synthoshpere/assets/121636887/48ca6386-2b51-46f1-885f-8007944bc246)
 
